@@ -1,11 +1,7 @@
 <?php
-
 session_start();
-
-
 if(isset($_SESSION['admin'])){
-include("header.php");
-       
+include("header.php");       
     $nro1 = rand(0, 9);
     $nro2 = rand(0, 9);
     $nro3 = rand(0, 9);
@@ -13,9 +9,7 @@ include("header.php");
     $simbolo = array('%', '$', '/', '@', '#');
     $mezcla_letra = rand(0, 6);
     $mezcla_simbolo = rand(0, 4);
-    
     $_SESSION['codigo_captcha'] = $nro1 . $letra[$mezcla_letra] . $nro2 . $simbolo[$mezcla_simbolo] . $nro3;
-    
     ?>
 
         <section class= "contenedor_carga">
@@ -29,26 +23,21 @@ include("header.php");
                 <select name="estado" id="">
                     <option value="proceso"> en proceso </option>
                     <option value="finalizado"> Finalizado </option>
-                </select>
-               
+                </select>            
                 <img src="captcha.php">
                 <input type="text" name="captcha" placeholder="Ingresa Captcha">
-                
                 <input type="submit" value="Cargar Componente">
             </form>           
         </section>
         <?php 
          
-         if (isset ($_GET['error_codigo'])){
-              
+         if (isset ($_GET['error_codigo'])){            
             echo "<h3> Codigo de verificacion incorrecto </h3>";
         }
-        if (isset ($_GET['ok'])){
-              
+        if (isset ($_GET['ok'])){              
             echo "<h3> Componente Cargado con Exito </h3>";
         } 
-        if (isset ($_GET['error'])){
-              
+        if (isset ($_GET['error'])){              
             echo "<h3> Imagen incorrecta. Verifique formato y el tamaño (max200kb) </h3>";
         }  
         ?>

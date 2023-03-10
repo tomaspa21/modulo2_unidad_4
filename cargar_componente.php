@@ -4,15 +4,12 @@ include("conexion.php");
 $codigo_captcha = $_POST['captcha'];
 
 if ($codigo_captcha == $_SESSION['codigo_captcha']) {
-
 $nombre_per = $_POST ['nombre']; 
 $apellido_per = $_POST ['apellido'];
 $funcion_per = $_POST ['funcion'];
 //$imagen_per = $_POST ['imagen'];
 $descripcion_per = $_POST ['descripcion'];
 $estado_per = $_POST ['estado'];
-
-
 $nombre_img = $_FILES['image']['name'];
 $tamanio_img = $_FILES['image']['size'];
 $tipo_img = $_FILES['image']['type'];
@@ -30,7 +27,3 @@ if (($tipo_img != 'image/jpeg' && $tipo_img != 'image/jpg' && $tipo_img != 'imag
 header("Location:cargar.php?error_codigo");
 }
 ?>
-
-
-
-

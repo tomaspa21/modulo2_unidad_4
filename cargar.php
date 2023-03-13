@@ -21,8 +21,8 @@ include("header.php");
                 <input type="file" name="imagen" required placeholder="Imagen">
                 <textarea name="descripcion"  cols="19" rows="10"></textarea>
                 <select name="estado" id="">
-                    <option value="proceso"> en proceso </option>
-                    <option value="finalizado"> Finalizado </option>
+                    <option value="En Proceso"> En Proceso </option>
+                    <option value="Finalizado"> Finalizado </option>
                 </select>            
                 <img src="captcha.php">
                 <input type="text" name="captcha" placeholder="Ingresa Captcha">
@@ -41,9 +41,7 @@ include("header.php");
             echo "<h3> Imagen incorrecta. Verifique formato y el tamaño (max200kb) </h3>";
         }  
         ?>
-        <?php include ("footer.php");?>
-        </body>
-        </html>
+        
         <?php
         }else{
            header("Location:index.php");

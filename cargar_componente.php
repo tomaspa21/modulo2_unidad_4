@@ -14,7 +14,8 @@ $nombre_img = $_FILES['image']['name'];
 $tamanio_img = $_FILES['image']['size'];
 $tipo_img = $_FILES['image']['type'];
 $tmp_img = $_FILES['image']['tmp name'];
-$destino =  'img/' . $nombre_img;
+$destino =  'imagenes/' . $nombre_img;
+
 if (($tipo_img != 'image/jpeg' && $tipo_img != 'image/jpg' && $tipo_img != 'image/png' && $tipo_img != 'image/gif') or $tamanio_img > 200000){
     header("Location: cargar.php?error");
     }else{
